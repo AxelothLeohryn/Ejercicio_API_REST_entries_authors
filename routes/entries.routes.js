@@ -1,12 +1,13 @@
 const express = require("express");
 
-const entriesRouter = express.Router();
+const router = express.Router();
 const entriesController = require("../controllers/entries.controller");
 
-entriesRouter.get("/", entriesController.getAllEntries);
-entriesRouter.put("/:title?", entriesController.modifyEntry);
+router.get("/", entriesController.getAllEntries);
+router.put("/:title?", entriesController.updateEntry);
+router.delete("/:title?", entriesController.deleteEntry);
 
 
 module.exports = {
-    entriesRouter
+    router
 }
