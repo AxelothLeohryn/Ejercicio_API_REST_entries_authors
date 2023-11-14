@@ -12,7 +12,6 @@ const updateEntry = async (req, res) => {
   models.updateEntry(entry);
   //De momento, enviar mensaje:
   res.status(200).json({
-    entry,
     message: `Se ha modificado la entry '${entry.title}'`,
   });
 };

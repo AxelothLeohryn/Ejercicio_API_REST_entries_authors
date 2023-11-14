@@ -18,10 +18,14 @@ const getAuthors = async (req, res) => {
 };
 const createAuthor = async (req, res) => {
   const author = req.body;
-  await models.createAuthor(author);
-  res.status(201).json({
-    message: `Usuario creado: ${author.name}  ${author.surname}`,
-  });
+  try {
+    await models.createAuthor(author);
+    res.status(201).json({
+      message: `Usuario creado: ${author.name}  ${author.surname}`,
+    });
+  } catch (error) {
+    
+  }
 };
 //Objeto de ejemplo para crear:
 // {
